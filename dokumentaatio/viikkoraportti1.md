@@ -1,7 +1,7 @@
 # Viikko 1
 
 ## Mitä tein?
-Tällä viikolla valitsin harjoitustyön aiheen: RSA-salausalgoritmi ja perehdyin siihen, sekä tein vaatimusmäärittelyn suurimmaksi osaksi valmiiksi.
+Tällä viikolla valitsin harjoitustyön aiheen: RSA-salausalgoritmi, perehdyin siihen ja tein vaatimusmäärittelyn suurimmaksi osaksi valmiiksi.
 
 ## Miten ohjelma edistyi?
 Koodausta ei ole vielä aloitettu. Vain projektipohja luotu.
