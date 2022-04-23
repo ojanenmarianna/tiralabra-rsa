@@ -15,5 +15,4 @@ Seuraavaksi toteutan salaamisen sekä salatun tekstin purun.
 | 1   |  8 |
 | 2   |  6 |
 | 5   |  8 |
-|-----|-----|
 |YHT. | 22 |
