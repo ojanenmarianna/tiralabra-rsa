@@ -65,30 +65,37 @@ class RsaService:
     def miller_rabin(self):
         pass
 
-    #GCD
     def gcd(self, exponent, eulers_toitent):
+        """
+        Laskee suurimman yhteisen nimittäjän Eukleideen funktiolla.
+        
+        Returns: 
+            Suurin yhteinen nimittäjä.
+        """
         while(eulers_toitent!=0):
-            exponent,eulers_toitent=eulers_toitent,exponent%eulers_toitent
+            exponent,eulers_toitent = eulers_toitent,exponent%eulers_toitent
         return exponent
 
-    #Extended Euclidean Algorithm
     def eea(self, a,b):
-        if(a%b==0):
-            return(b,0,1)
+        """
+        Laajennettu Eukleideen funktio.
+
+        Args:
+            a, b: Verrattavat luvut.
+        """
+        if a%b==0:
+            return b,0,1
 
         gcd,s,t = self.eea(b,a%b)
         s = s-((a//b) * t)
-        print("%d = %d*(%d) + (%d)*(%d)"%(gcd,a,t,s,b))
-        return(gcd,t,s)
+        return gcd,s,t
 
-    #Multiplicative Inverse
     def mult_inv(self):
+        """
+        Laskee purkuavaimen d yksityiselle avaimelle.
+        """
         gcd,s,_= self.eea(self.exponent,self.eulers_totient)
-        if(gcd!=1):
+        if gcd!=1:
             return None
-
-        if(s<0):
-            print("s=%d. Since %d is less than 0, s = s(modr), i.e., s=%d."%(s,s,s%self.r))
-        elif(s>0):
-            print("s=%d."%(s))
-        return s%self.eulers_totient
+        else:
+            return s%self.eulers_totient
