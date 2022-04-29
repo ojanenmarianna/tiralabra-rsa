@@ -1,6 +1,8 @@
 import math
 import random
 
+from prime_service import PrimeService
+
 class RsaService:
 
     def __init__(self):
@@ -28,28 +30,13 @@ class RsaService:
         """
         return abs(p*q) // math.gcd(p, q)
 
-    def primes_in_range(self, x, y):
-        """
-        Luo listan alkuluvuista, jotka ovat välillä x, y.
-        """
-        prime_list = []
-        for n in range(x, y+1):
-            #is_prime = True
-            for num in range(2, n):
-                if n % num == 0:
-                    break
-            else:
-                prime_list.append(n)
-
-        return prime_list
-
     def generate_prime_numbers(self):
         """Luo alkuluvut p ja q niin, että p != q.
         
         Returns:
             Tuple, joka sisältää alkuluvut.
         """
-        prime_list = self.primes_in_range(2, 100)
+        prime_list = PrimeService().generate_list(2, 100)
         print(prime_list)
         p = random.choice(prime_list)
         while True:
