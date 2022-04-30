@@ -2,7 +2,7 @@
 
 ## Mitä tein?
 
-Toteutin tällä viikolla suurimman osan ohjelman toiminnallisuudesta, sekä yksikkötestit. Päädyin käyttämään osittain Pythonin valmiita maths-kirjastosta löytyviä 
+Toteutin tällä viikolla suurimman osan ohjelman toiminnallisuudesta, sekä yksikkötestit. Päädyin käyttämään osittain Pythonin valmiita math-kirjastosta löytyviä 
 ominaisuuuksia. kuten gcd(greatest common divisor) sekä pow(), jonka avulla pystyin laskemaan suoraan modulaarisen käänteisen kertolaskun aiemmin määriteltyjen
 lambdan sekä julkisen avaimen eksponentin avulla. Julkisen avaimen eksponenttina on tällä hetkellä Wikipedian mukaan *yleisimmin RSA_salauksessa käytetty arvo 65537*,
 mutta saatan vielä toteuttaa tämän laskemisen itse.
