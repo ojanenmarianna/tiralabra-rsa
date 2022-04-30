@@ -27,7 +27,7 @@ $ poetry run invoke test
 
 #### Kattavuusraportin luominen
 ```
-$ poetry run invoke coverage
+$ poetry run invoke coverage_report
 ```
 
 #### Pylintin ajaminen
