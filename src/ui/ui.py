@@ -1,13 +1,19 @@
+# pylint: disable=too-many-instance-attributes
+# pylint: disable=attribute-defined-outside-init
 import tkinter as ttk
-from tkinter import constants
+from tkinter import constants, messagebox
+
+from services.rsa_key import RsaKey
 from services.rsa_service import RsaService
+from services.prime_service import PrimeService
+from services.encryption_service import Encrypt
+from services.decryption_service import Decrypt
 
 class UI:
 
     def __init__(self, root):
         self.keys_generated = False
         self._root = root
-        self.rsa_service = RsaService()
 
 
     def start(self):

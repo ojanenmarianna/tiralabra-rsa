@@ -3,25 +3,27 @@ class PrimeService:
     Luokka alkulukujen luomiseen.
     """
 
-    def __init__(self):
+    def __init__(self, n):
 
-        self.prime_list = self.generate_list(from_number, to_number)
+        self.to_number = n
+        self.prime_list = self.generate_list(self.to_number)
 
-    def generate_list(self, from_number, to_number):
+    def generate_list(self, n):
         """
-        Luo listan alkuluvuista lukuun to_number asti Erastostheneen seulalla.
-        """
+        Eratostheneen seula pienten alkulukujen luontiin.
 
-        primes = [True for i in range(to_number+1)]
-        for i in range(from_number, to_number + 1):
-            if primes[i]:
-                for j in range(i * i, to_number + 1, i):
-                    primes[j] = False
-    
+        Returns:
+            Lista mahdollisista alkuluvuista.
+        """
         prime_list = []
-        for i in range(from_number, to_number + 1):
-            if primes[i]:
+
+        prime = [True for i in range(n+1)]
+        for i in range(2, n+1):
+            if prime[i]:
+                for j in range(i*i, n+1, i):
+                    prime[j] = False
+
+        for i in range(2, n+1):
+            if prime[i]:
                 prime_list.append(i)
-    
         return prime_list
-    
