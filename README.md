@@ -6,14 +6,14 @@ Tässä repositoriossa on toteutettu Helsingin yliopiston Tietorakenteet ja algo
 
 [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 
-## Käyttöohjeet
+### Käyttöohjeet
 
 #### Ohjelman alustaminen
 
-1. Asenna riippuvuudet komennolla 
-```
-$poetry install 
-´´´
+Asenna riippuvuudet
+    ```
+    $ poetry install
+    ```
 
 #### Ohjelman ajaminen
 ```
