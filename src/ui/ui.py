@@ -21,64 +21,160 @@ class UI:
         Luo ja näyttää käyttöliittymän.
         """
 
-        head_label = ttk.Label(self._root, text="RSA-salausgeneraattori")
-        generate_button = ttk.Button(self._root, text="Luo avainpari", command=self.generate())
+        head_label = ttk.Label(
+            master=self._root, text="RSA-salausgeneraattori", font="Arial 20 bold")
+        key_length_label = ttk.Label(
+            master=self._root, text="Anna avainten pituus biteissä:", font=("Arial 12"))
+        self.key_length_entry = ttk.Entry(master=self._root)
+        generate_button = ttk.Button(
+            master=self._root, text="Luo avainpari", command=self.generate)
 
-        message_label = ttk.Label(self._root, text="Salattava viesti:")
-        message_entry = ttk.Text(self._root, width=25, height=6)
+        encryptable_label = ttk.Label(
+            master=self._root, text="Salattava viesti:", font="Arial 12")
+        self.encryptable_entry = ttk.Text(self._root, width=32,
+                               height=7, font=("Arial 11"))
 
-        encrypt_button = ttk.Button(self._root, text="Salaa viesti", command=self.encrypt())
-        encrypted_label = ttk.Label(self._root, text="Salattu viesti:")
-        encrypted_entry = ttk.Text(self._root, width=25, height=6)
+        encrypt_button = ttk.Button(
+            master=self._root, text="Salaa viesti", command=self.encrypt)
+        encrypted_label = ttk.Label(
+            master=self._root, text="Salattu viesti:", font="Arial 12")
+        self.encrypted_entry = ttk.Text(self._root, width=32,
+                               height=7, font=("Arial 11"))
 
-        decrypt_label = ttk.Label(self._root, text="Purettava viesti:")
-        decrypt_entry = ttk.Text(self._root, width=25, height=6)
+        decryptable_label = ttk.Label(
+            master=self._root, text="Purettava viesti:", font="Arial 12")
+        self.decryptable_entry = ttk.Text(self._root, width=32,
+                               height=7, font=("Arial 11"))
+        decrypt_button = ttk.Button(
+            master=self._root, text="Pura salattu viesti", command=self.decrypt)
 
-        decrypt_button = ttk.Button(self._root, text="Pura viesti", command=self.decrypt())
-        decrypted_label = ttk.Label(self._root, text="Purettu viesti:")
-        decrypted_entry = ttk.Text(self._root, width=25, height=6)
+        decrypted_label = ttk.Label(
+            master=self._root, text="Purettu viesti:", font="Arial 12")
+        self.decrypted_entry = ttk.Text(self._root, width=32,
+                               height=7, font=("Arial 11"))
 
         head_label.grid(row=0, column=0, columnspan=2,
                         sticky=(constants.W, constants.E))
-        generate_button.grid(row=1, column=0, sticky=(constants.W, constants.E))
+        key_length_label.grid(row=2, column=0, sticky=(
+            constants.W, constants.E), padx=5, pady=5)
+        self.key_length_entry.grid(row=2, column=1, sticky=(
+            constants.W, constants.E), padx=5, pady=5)
+        generate_button.grid(
+            row=3, column=1, sticky=constants.W, padx=5, pady=5)
 
-        message_label.grid(row=3, column=0, sticky=(
+        encryptable_label.grid(row=4, column=0, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        message_entry.grid(row=4, column=0, sticky=constants.W)
+        self.encryptable_entry.grid(row=5, column=0, sticky=constants.W)
+        encrypt_button.grid(row=6, column=0, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
 
-        encrypt_button.grid(row=5, column=0, sticky=(
+        encrypted_label.grid(row=4, column=1, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        encrypted_label.grid(row=3, column=1, sticky=(
-            constants.E, constants.W), padx=5, pady=5)
-        encrypted_entry.grid(
-            row=4, column=1, sticky=(constants.E, constants.W))
+        self.encrypted_entry.grid(
+            row=5, column=1, sticky=(constants.E, constants.W))
 
-        decrypt_label.grid(row=6, column=0, sticky=(
+        decryptable_label.grid(row=7, column=0, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        decrypt_entry.grid(row=7, column=0, sticky=constants.W)
+        self.decryptable_entry.grid(row=8, column=0, sticky=constants.W)
 
-        decrypt_button.grid(row=8, column=0, sticky=(
+        decrypt_button.grid(row=9, column=0, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        decrypted_label.grid(row=6, column=1, sticky=(
+        decrypted_label.grid(row=7, column=1, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        decrypted_entry.grid(
-            row=7, column=1, sticky=(constants.E, constants.W))
-    
+        self.decrypted_entry.grid(
+            row=8, column=1, sticky=(constants.E, constants.W))
+
+        self._root.columnconfigure(0, weight=1)
+        self._root.rowconfigure(0, weight=1)
+        #self._root.grid_rowconfigure(0, minsize=60)
+
+    @staticmethod
+    def show_keys_generated():
+        """
+        Ilmoittaa avainten luomisesta.
+        """
+
+        messagebox.showinfo("RSA salaus", "Avainpari generoitu!")
+
+    @staticmethod
+    def show_key_entry_error():
+        """
+        Ilmoittaa virhesyötteestä.
+        """
+
+        messagebox.showerror("Error", "Avainten pituus pitää olla luku väliltä 1000-5000.")
+
+    @staticmethod
+    def show_key_error():
+        """
+        Ilmoittaa viestin saalmisesta ilman generoituja avaimia
+        """
+
+        messagebox.showerror("Error", "Ei generoituja avaimia.")
+
+    @staticmethod
+    def show_encrypt_error():
+        """
+        Ilmoittaa virhesyötteestä.
+        """
+
+        messagebox.showerror("Error", "Viestin salaus epäonnistui.")
+
+    @staticmethod
+    def show_decrypt_error():
+        """
+        Ilmoittaa virhesyötteestä.
+        """
+
+        messagebox.showerror("Error", "Viestin purku epäonnistui.")
+
+
     def generate(self):
         """
         Kutsuu tarvittavia metodeita avainparin luomiseksi.
         """
+        try:
+            length = int(self.key_length_entry.get())
+        except: # pylint: disable=bare-except
+            self.show_key_entry_error()
+            return
+        if length < 1000 or length > 5000:
+            self.show_key_entry_error()
+            return
+        self.rsa_service = RsaService(int(length), PrimeService, RsaKey)
         self.rsa_service.generate_keys()
+        self.key_length_entry.delete(0, ttk.END)
         self.keys_generated = True
+        self.show_keys_generated()
 
     def encrypt(self):
         """
-        Kutsuu tarvittavia metodeita viestin salaamiseksi.
+        Kutsuu tarvittavia metodeita viestin salaamiseksi ja ilmoittaa onnistumisesta käyttäjälle.
         """
-        pass
+
+        if not self.keys_generated:
+            self.show_key_error()
+            return
+        message = str(self.encryptable_entry.get("1.0", "end-1c"))
+        self.msg_size = len(message.encode())
+        try:
+            encrypted_message = Encrypt().encrypt(message, self.rsa_service.pub_key)
+        except: # pylint: disable=bare-except
+            self.show_encrypt_error()
+            return
+        self.encrypted_entry.insert(ttk.END, encrypted_message)
+        self.decryptable_entry.insert(ttk.END, encrypted_message)
 
     def decrypt(self):
         """
-        Kutsuu tarvittavia metodeita viestin purkamiseksi.
+        Kutsuu tarvittavia metodeita viestin purkamiseen ja ilmoittaa onnistumisesta käyttäjälle.
         """
-        pass
+
+        encrypted_message = self.decryptable_entry.get("1.0", "end-1c")
+        try:
+            decrypted_message = Decrypt().decrypt(
+                int(encrypted_message), self.msg_size, self.rsa_service.pvt_key)
+        except: # pylint: disable=bare-except
+            self.show_decrypt_error()
+            return
+        self.decrypted_entry.insert(ttk.END, decrypted_message)
