@@ -71,7 +71,7 @@ class RsaService:
 
     def compute_lambdan(self, prime_p, prime_q):
         """
-        Lasketaan Carmichaelin funktio arvolla p*q (lambda(n) = lcm(p-1, q-1)).
+        Lasketaan Carmichaelin funktio p:llä ja q:lla (lambda(n) = lcm(p-1, q-1)).
         """
 
         return abs((prime_p-1)*(prime_q-1)) // math.gcd(prime_p-1, prime_q-1)
