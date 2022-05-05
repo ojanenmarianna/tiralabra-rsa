@@ -103,9 +103,8 @@ class RsaService:
         Args:
             possible_prime = mahdollinen alkuluku
         """
-
         for prime in self.primes_list:
-            if prime >= math.sqrt(possible_prime):
+            if prime >= possible_prime - 1:
                 return True
             if possible_prime % prime == 0:
                 return False
