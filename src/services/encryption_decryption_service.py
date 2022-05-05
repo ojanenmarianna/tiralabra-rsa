@@ -1,6 +1,4 @@
-from sys import byteorder
-
-
+# pylint: disable=no-self-use
 class EncryptAndDecrypt:
     """
     Luokka salaa ja purkaa viestin.
@@ -22,4 +20,3 @@ class EncryptAndDecrypt:
         message = decrypted.to_bytes(size, byteorder='big')
         in_text = message.decode()
         return in_text
-

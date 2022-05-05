@@ -1,34 +1,34 @@
 import unittest
 
-from services.rsa_service import *
+from services.rsa_service import RsaService
 from services.prime_service import PrimeService
 from services.rsa_key import RsaKey
 
 class TestRsaService(unittest.TestCase):
     def setUp(self):
-        self.p = 23
-        self.q = 59
+        self.prime_p = 23
+        self.prime_q = 59
         self.not_prime = 8
         self.test_service = RsaService(1024, PrimeService, RsaKey)
         self.test_service.generate_keys()
 
     def test_compute_lambdan(self):
-        self.assertEqual(638, self.test_service.compute_lambdan(self.p, self.q))
+        self.assertEqual(638, self.test_service.compute_lambdan(self.prime_p, self.prime_q))
 
     def test_miller_rabin_with_prime(self):
-        self.assertEqual(True, self.test_service.miller_rabin(self.q))
+        self.assertEqual(True, self.test_service.miller_rabin(self.prime_q))
 
     def test_miller_rabin_with_not_prime(self):
         self.assertEqual(False, self.test_service.miller_rabin(self.not_prime))
 
     def test_trial_devision(self):
-        self.assertEqual(True, self.test_service.trial_division(self.p))
+        self.assertEqual(True, self.test_service.trial_division(self.prime_p))
 
     def test_trial_division_with_not_prime(self):
         self.assertEqual(False, self.test_service.trial_division(self.not_prime))
 
     def test_is_prime(self):
-        self.assertEqual(True, self.test_service.is_prime(self.q))
+        self.assertEqual(True, self.test_service.is_prime(self.prime_q))
 
     def test_is_prime_with_not_prime(self):
         self.assertEqual(False, self.test_service.is_prime(self.not_prime))

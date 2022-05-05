@@ -1,6 +1,4 @@
-# pylint: disable=invalid-name
 import random
-import math
 
 
 class RsaService:
@@ -42,27 +40,19 @@ class RsaService:
         self.pub_key = self.rsa_key(modulus, self.exponent_e)
         self.pvt_key = self.rsa_key(modulus, exponent_d)
 
-    def generate_number(self, length):
-        """
-        Luo n-bittiä pitkän satunnaisen luvun, jolla alkuluku generoidaan.
-        """
-
-        return random.getrandbits(length)
-
-
     def generate_prime_numbers(self):
         """
         Luo alkuluvut p ja q, niin että p != q.
         """
 
         while True:
-            prime_p = self.generate_number(self.length//2)
+            prime_p = random.getrandbits(self.length//2)
             if prime_p % 2 == 0:
                 continue
             if self.is_prime(prime_p):
                 break
         while True:
-            prime_q = self.generate_number(self.length//2)
+            prime_q = random.getrandbits(self.length//2)
             if prime_q % 2 == 0 or prime_q == prime_p:
                 continue
             if self.is_prime(prime_q):
@@ -82,7 +72,7 @@ class RsaService:
         """
         while num_b != 0:
             num_a, num_b = num_b, num_a % num_b
-        print(num_a)
+
         return num_a
 
     def is_prime(self, possible_prime):
@@ -118,32 +108,22 @@ class RsaService:
             possible_prime = mahdollinen alkuluku
         """
 
-        r, s = 0, possible_prime-1
-        while s % 2 == 0:
-            r += 1
-            s = s // 2
+        num_r, num_s = 0, possible_prime-1
+        while num_s % 2 == 0:
+            num_r += 1
+            num_s = num_s // 2
 
         for _ in range(40):
-            a = random.randint(2, possible_prime-2)
-            if math.gcd(possible_prime, a) != 1:
+            num_a = random.randint(2, possible_prime-2)
+            if self.gcd(possible_prime, num_a) != 1:
                 return False
-            x = pow(a, s, possible_prime)
-            if x == 1 or x == possible_prime-1:
+            num_x = pow(num_a, num_s, possible_prime)
+            if num_x in (1, possible_prime-1):
                 continue
-            for _ in range(r-1):
-                x = pow(x, 2, possible_prime)
-                if x == possible_prime-1:
+            for _ in range(num_r-1):
+                num_x = pow(num_x, 2, possible_prime)
+                if num_x == possible_prime-1:
                     break
             else:
                 return False
         return True
-
-    def decrypt(self, message, size, key):
-        """
-        Purkaa salatun viestin.
-        """
-
-        decrypted = pow(message, key.get_exponent(), key.get_modulus())
-        message = decrypted.to_bytes(size, byteorder='big')
-        in_text = message.decode()
-        return in_text
