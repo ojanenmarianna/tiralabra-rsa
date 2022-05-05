@@ -6,8 +6,7 @@ from tkinter import constants, messagebox
 from services.rsa_key import RsaKey
 from services.rsa_service import RsaService
 from services.prime_service import PrimeService
-from services.encryption_service import Encrypt
-from services.decryption_service import Decrypt
+from services.encryption_decryption_service import EncryptAndDecrypt
 
 class UI:
 
@@ -158,7 +157,7 @@ class UI:
         message = str(self.encryptable_entry.get("1.0", "end-1c"))
         self.msg_size = len(message.encode())
         try:
-            encrypted_message = Encrypt().encrypt(message, self.rsa_service.pub_key)
+            encrypted_message = EncryptAndDecrypt().encrypt(message, self.rsa_service.pub_key)
         except: # pylint: disable=bare-except
             self.show_encrypt_error()
             return
@@ -172,7 +171,7 @@ class UI:
 
         encrypted_message = self.decryptable_entry.get("1.0", "end-1c")
         try:
-            decrypted_message = Decrypt().decrypt(
+            decrypted_message = EncryptAndDecrypt().decrypt(
                 int(encrypted_message), self.msg_size, self.rsa_service.pvt_key)
         except: # pylint: disable=bare-except
             self.show_decrypt_error()

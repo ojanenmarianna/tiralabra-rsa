@@ -137,3 +137,13 @@ class RsaService:
             else:
                 return False
         return True
+
+    def decrypt(self, message, size, key):
+        """
+        Purkaa salatun viestin.
+        """
+
+        decrypted = pow(message, key.get_exponent(), key.get_modulus())
+        message = decrypted.to_bytes(size, byteorder='big')
+        in_text = message.decode()
+        return in_text
