@@ -71,10 +71,19 @@ class RsaService:
 
     def compute_lambdan(self, prime_p, prime_q):
         """
-        Lasketaan Carmichaelin funktio p:llä ja q:lla (lambda(n) = lcm(p-1, q-1)).
+        Laskee Carmichaelin funktion alkuluvuilla p ja q (lambda(n) = lcm(p-1, q-1)).
         """
 
-        return abs((prime_p-1)*(prime_q-1)) // math.gcd(prime_p-1, prime_q-1)
+        return abs((prime_p-1)*(prime_q-1)) // self.gcd(prime_p-1, prime_q-1)
+
+    def gcd(self, num_a, num_b):
+        """
+        Laskee suurimman yhteisen jakajan a:lle ja p:lle.
+        """
+        while num_b != 0:
+            num_a, num_b = num_b, num_a % num_b
+        print(num_a)
+        return num_a
 
     def is_prime(self, possible_prime):
         """
