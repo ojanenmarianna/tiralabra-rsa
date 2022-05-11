@@ -29,7 +29,7 @@ class RsaService:
 
         Args:
             modulus = käytetään moduulina julkiselle ja yksityiselle avaimelle
-            lambdan = lcm(p-1, q-1)
+            lambdan = compute_lambdan(p-1, q-1)
             exponent_d = yksityisen avaimen eksponentti.
         """
 
