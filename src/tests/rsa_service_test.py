@@ -18,7 +18,7 @@ class TestRsaService(unittest.TestCase):
         self.pvt_key = self.test_service.pvt_key
 
     def test_compute_lambdan(self):
-        self.assertEqual(1565271509992087335897474486663626894536348253905871066930100982678848556060572245437474835499160580751165493921375878352803960, self.test_service.compute_lambdan(self.prime_p, self.prime_q))
+        self.assertEqual(1565271509992087335897474486663626894536348253905871066930100982678848556060572245437474835499160580751165493921375878352803960, self.test_service.compute_lambdan(self.prime_p, self.prime_q)) # pylint: disable=C0301
 
     def test_miller_rabin_with_prime(self):
         self.assertEqual(True, self.test_service.miller_rabin(self.prime_q))
@@ -55,4 +55,4 @@ class TestRsaService(unittest.TestCase):
         test_string = ''.join(random.choice(letters) for i in range(length))
         encrypted = EncryptAndDecrypt().encrypt(test_string, self.pub_key)
 
-        self.assertEqual(test_string, EncryptAndDecrypt().decrypt(int(encrypted), length, self.pvt_key))
+        self.assertEqual(test_string, EncryptAndDecrypt().decrypt(int(encrypted), length, self.pvt_key)) # pylint: disable=C0301

@@ -23,7 +23,7 @@ class UI:
         head_label = ttk.Label(
             master=self._root, text="RSA-salausgeneraattori", font="Arial 20 bold")
         key_length_label = ttk.Label(
-            master=self._root, text="Anna avainten pituus biteissä (min. 500 bittiä):", font=("Arial 12"))
+            master=self._root, text="Anna avainten pituus biteissä (min. 500 bittiä):", font=("Arial 12")) # pylint: disable=C0301
         self.key_length_entry = ttk.Entry(master=self._root)
         generate_button = ttk.Button(
             master=self._root, text="Luo avainpari", command=self.generate)
