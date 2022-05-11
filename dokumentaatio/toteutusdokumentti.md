@@ -48,6 +48,11 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
 - Ohjelma toimii vain alle 128 merkkiä pitkillä syötteillä. Yksi parannusehdotus olisikin siis toteuttaa toiminnallisuus niin, että syötteet voisivat olla pidempiä.
 - Pitkiä syötteitä varten voitaisiin toteuttaa viestin 'pehmustaminen' (padding), eli viestiin lisättäisiin randomia dataa, joka auttaa estämään useita hyökkäyksiä piilottamalla viestin todellisen rakenteen.
 - Ohjelma ei tallenna avaimia mihinkään, parannuksena voitaisiin toteuttaa julkisen ja yksityisen avaimen tallennus esim. johonkin ennalta määriteltyyn tiedostoon.
+- Tärkeille luvuille, kuten yksityisen avaimen eksponentti d sekä alkuluvuille p ja q tulisi toteuttaa tarkemmat ehdot, sillä pelkkä eriarvoisuus ei takaa turvallisuutta.
+  - Jos p ja q ovat liian lähellä toisiaan, ne on helppo löytää
+  - Jos yksityisen avaimen eksponentti d on liian pieni, se on helppo selvittää 
+
+##### Fun Fact: Tällä hetkellä pisin toteutettu Rsa-avain on 768 bittiä pitkä.
 
 ## Lähteet
 
