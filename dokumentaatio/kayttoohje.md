@@ -1,32 +1,35 @@
 # Käyttöohje
 
-Miten ohjelma suoritetaan, miten eri toiminnallisuuksia käytetään
-Minkä muotoisia syötteitä ohjelma hyväksyy
-Missä hakemistossa on jar ja ajamiseen tarvittavat testitiedostot.
 
-#### Ohjelman alustaminen
+### Ohjelman alustaminen
 
 Asenna riippuvuudet
 ```
 $ poetry install
 ```
 
-#### Ohjelman ajaminen
+### Ohjelman ajaminen
 ```
 $ poetry run invoke start
 ```
 
-#### Testien ajaminen
+### Testien ajaminen
 ```
 $ poetry run invoke test
 ```
 
-#### Kattavuusraportin luominen
+### Kattavuusraportin luominen
 ```
-$ poetry run invoke coverage_report
+$ poetry run invoke report
 ```
 
-#### Pylintin ajaminen
+### Pylintin ajaminen
 ```
 $ poetry run invoke lint
 ```
+
+## Ohjelman käyttäminen
+
+Ohjelma hyväksyy avainten generointiin luvun väliltä 500-5000.
+Salattavaksi tekstiksi max. 127 merkkiä pitkän merkkijonon.
+Purettavaksi 'koodiksi' samoilla avaimilla salatun tekstin (tämä tulee kenttään automaattisesti).
