@@ -50,4 +50,12 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
 
 ## Lähteet
 
-[Modular multiplicative inverse in Python](https://stackoverflow.com/questions/4798654/modular-multiplicative-inverse-function-in-python)
+- [Modular multiplicative inverse in Python](https://stackoverflow.com/questions/4798654/modular-multiplicative-inverse-function-in-python)
+- [RSA-salausalgortimit ja alkuluvut](https://trepo.tuni.fi/bitstream/handle/10024/78940/gradu02474.pdf?sequence=1&isAllowed=y)
+- [e.e.a.com](https://www.extendedeuclideanalgorithm.com/xea.php)
+- [Prime Curious](https://primes.utm.edu/curios/index.php?start=37&stop=96)
+- [Wikipedia: RSA (cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+- [Wikipedia: Miller-Rabin test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
+- [Wkipedia: Carmichael function](https://en.wikipedia.org/wiki/Carmichael_function)
+- [Wikipedia: Primality test](https://en.wikipedia.org/wiki/Primality_test)
+- Chandel, Sonali & Cao, Wenxuan & Sun, Zijing & Yang, Jiayi & Zhang, Bailu & Ni, Tian-Yi. (2020). A Multi-dimensional Adversary Analysis of RSA and ECC in Blockchain Encryption. 10.1007/978-3-030-12385-7_67. 
