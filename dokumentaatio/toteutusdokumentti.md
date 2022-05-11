@@ -40,6 +40,8 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
 
 ## Saavutetut aika- ja tilavaativuudet
 
+1. Trial division alkulukutestin saavutettu aikavaativuus on O(sqrt(N)).
+
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
 
