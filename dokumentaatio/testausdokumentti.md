@@ -2,6 +2,7 @@
 
 ## Yksikkötestauksen kattavuusraportti
 
+![plot](https://github.com/ojanenmarianna/tiralabra-rsa/blob/main/dokumentaatio/kuvat/kattavuusraportti.jpg)
 
 
 Mitä on testattu, miten tämä tehtiin?
