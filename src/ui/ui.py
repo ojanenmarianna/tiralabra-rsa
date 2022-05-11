@@ -23,13 +23,13 @@ class UI:
         head_label = ttk.Label(
             master=self._root, text="RSA-salausgeneraattori", font="Arial 20 bold")
         key_length_label = ttk.Label(
-            master=self._root, text="Anna avainten pituus biteissä:", font=("Arial 12"))
+            master=self._root, text="Anna avainten pituus biteissä (min. 500 bittiä):", font=("Arial 12"))
         self.key_length_entry = ttk.Entry(master=self._root)
         generate_button = ttk.Button(
             master=self._root, text="Luo avainpari", command=self.generate)
 
         encryptable_label = ttk.Label(
-            master=self._root, text="Salattava viesti:", font="Arial 12")
+            master=self._root, text="Salattava viesti (max pituus 127 merkkiä):", font="Arial 12")
         self.encryptable_entry = ttk.Text(self._root, width=32,
                                height=7, font=("Arial 11"))
 
@@ -101,7 +101,7 @@ class UI:
         Ilmoittaa virhesyötteestä.
         """
 
-        messagebox.showerror("Error", "Avainten pituus pitää olla luku väliltä 1000-5000.")
+        messagebox.showerror("Error", "Avainten pituus pitää olla luku väliltä 500-5000.")
 
     @staticmethod
     def show_key_error():
