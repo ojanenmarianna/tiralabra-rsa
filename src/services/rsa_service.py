@@ -1,5 +1,5 @@
 import random
-
+import math
 
 class RsaService:
 
@@ -83,6 +83,8 @@ class RsaService:
             possible_prime = mahdollinen alkuluku
         """
         for prime in self.primes_list:
+            if prime >= math.sqrt(possible_prime): 
+               return True 
             if possible_prime % prime == 0:
                 return False
         return True

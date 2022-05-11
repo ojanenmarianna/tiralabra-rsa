@@ -11,7 +11,7 @@ class TestRsaService(unittest.TestCase):
     def setUp(self):
         self.prime_p = 1000079910000813100008191000083110000849100008671000087110000873
         self.prime_q = 6260585756555452515049484645444240393836353433323028272625242221
-        self.not_prime = self.prime_q*self.prime_p
+        self.not_prime = 6382
         self.test_service = RsaService(1024, PrimeService, RsaKey)
         self.test_service.generate_keys()
         self.pub_key = self.test_service.pub_key
@@ -29,8 +29,8 @@ class TestRsaService(unittest.TestCase):
     def test_trial_devision(self):
         self.assertEqual(True, self.test_service.trial_division(self.prime_p))
 
-    #def test_trial_division_with_not_prime(self):
-        #self.assertEqual(False, self.test_service.trial_division(self.not_prime))
+    def test_trial_division_with_not_prime(self):
+        self.assertEqual(False, self.test_service.trial_division(self.not_prime))
 
     def test_is_prime(self):
         self.assertEqual(True, self.test_service.is_number_prime(self.prime_q))
