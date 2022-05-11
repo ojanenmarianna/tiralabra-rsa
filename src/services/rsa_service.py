@@ -34,6 +34,7 @@ class RsaService:
         """
 
         prime_p, prime_q = self.generate_prime_numbers()
+        print(prime_p, prime_q)
         modulus = prime_p*prime_q
         lambdan = self.compute_lambdan(prime_p, prime_q)
         exponent_d = pow(self.exponent_e, -1, lambdan)

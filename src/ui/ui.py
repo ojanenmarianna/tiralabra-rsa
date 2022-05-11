@@ -137,7 +137,7 @@ class UI:
         except: # pylint: disable=bare-except
             self.show_key_entry_error()
             return
-        if length < 1000 or length > 5000:
+        if length < 500 or length > 5000:
             self.show_key_entry_error()
             return
         self.rsa_service = RsaService(int(length), PrimeService, RsaKey)
