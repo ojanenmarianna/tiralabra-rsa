@@ -47,11 +47,14 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
 
 - Ohjelma toimii vain alle 128 merkkiä pitkillä syötteillä. Yksi parannusehdotus olisikin siis toteuttaa toiminnallisuus niin, että syötteet voisivat olla pidempiä.
 - Pitkiä syötteitä varten voitaisiin myös toteuttaa jonkin näköinen randomoitu 'padding', jotta avainten 'toistuessa' pitkissä syötteissä, salauksen purkaminen olisi vaikeampaa eikä siis toisteisuudesta voisi päätellä mitään.
+- Ohjelma ei tallenna avaimia mihinkään, parannuksena voitaisiin toteuttaa julkisen ja yksityisen avaimen tallennus esim. johonkin ennalta määriteltyyn tiedostoon.
 
 ## Lähteet
 
 - [Modular multiplicative inverse in Python](https://stackoverflow.com/questions/4798654/modular-multiplicative-inverse-function-in-python)
+- [What is RSA encryption and how does it work?](https://www.comparitech.com/blog/information-security/rsa-encryption/)
 - [RSA-salausalgortimit ja alkuluvut](https://trepo.tuni.fi/bitstream/handle/10024/78940/gradu02474.pdf?sequence=1&isAllowed=y)
+- [RSA Algorithm in Cryptography](https://www.geeksforgeeks.org/rsa-algorithm-cryptography/)
 - [e.e.a.com](https://www.extendedeuclideanalgorithm.com/xea.php)
 - [Prime Curious](https://primes.utm.edu/curios/index.php?start=37&stop=96)
 - [Wikipedia: RSA (cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
