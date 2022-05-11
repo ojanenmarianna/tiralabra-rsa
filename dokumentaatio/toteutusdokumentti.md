@@ -36,11 +36,11 @@ Luokka on vastuussa viestin salaamisesta ja salatun viestin purkamisesta.
 
 Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden alkulukutestejä varten.
 
-1. Luo listan, jossa pelkästään alkulukuja, annettuun lukuun asti (1500).
+1. Luo listan annettuun lukuun asti (1500), jossa on pelkästään alkulukuja.
 
 ## Saavutetut aika- ja tilavaativuudet
 
-1. Trial division alkulukutestin saavutettu aikavaativuus on O(sqrt(N)).
+- Trial division alkulukutestin saavutettu aikavaativuus on O(sqrt(N)).
 
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
