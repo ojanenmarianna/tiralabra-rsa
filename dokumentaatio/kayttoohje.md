@@ -32,6 +32,6 @@ $ poetry run invoke lint
 
 Ohjelma hyväksyy avainten generointiin luvun väliltä 500-5000.
 
-Salattavaksi tekstiksi max. 127 merkkiä pitkän merkkijonon.
+Salattavaksi tekstiksi max. 127 merkkiä pitkän merkkijonon (hyväksyy kirjaimet, numerot ja erikoismerkit).
 
 Purettavaksi 'koodiksi' samoilla avaimilla salatun tekstin (tämä tulee kenttään automaattisesti).
