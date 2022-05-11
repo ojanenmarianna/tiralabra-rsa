@@ -21,6 +21,3 @@ Testaa RsaServicen metodien toimintaa, mm. compute_lambdan, trial_division...
 2. Encryption ja decryption -testi testaa, että viestin salaaminen ja salatun viestin purkaminen toimii aina oikein.
 
 
-Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?
-Miten testit voidaan toistaa?
-Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
