@@ -1,10 +1,12 @@
 # Toteutusdokumentti
 
+##### Fun Fact: Tällä hetkellä pisin toteutettu Rsa-avain on 768 bittiä pitkä.
+
 ## Ohjelman yleisrakenne
 
 ### Luokat
 
-#### Rsa_service
+#### RsaService
 
 Luokka on vastuussa Rsa-avaimen luonnista
 
@@ -17,14 +19,14 @@ Luokka on vastuussa Rsa-avaimen luonnista
 7. Luodaan julkinen avain moduluksella ja julkisen avaimen eksponentilla e
 8. Luodaan yksityinen avain moduluksella ja yksityisen avaimeneksponentilla d.
 
-#### Rsa_key
+#### RsaKey
 
 Luokka on vastuussa rsa-avain -olion luomisesta.
 
 1. Luo avaimen annetulla moduluksella ja eksponentilla
 2. Palauttaa avaimen moduluksen ja eksponentin gettereillä
 
-#### Encryption_decryption_service
+#### EncryptionDecryptionService
 
 Luokka on vastuussa viestin salaamisesta ja salatun viestin purkamisesta.
 
@@ -32,7 +34,7 @@ Luokka on vastuussa viestin salaamisesta ja salatun viestin purkamisesta.
 2. Purkaa viestin muuttamalla ensin kokonaisluvun tavuiksi ja sitten tavut tekstiksi.
 
 
-#### Prime_service
+#### PrimeService
 
 Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden alkulukutestejä varten.
 
@@ -52,7 +54,6 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
   - Jos p ja q ovat liian lähellä toisiaan, ne on helppo löytää
   - Jos yksityisen avaimen eksponentti d on liian pieni, se on helppo selvittää 
 
-##### Fun Fact: Tällä hetkellä pisin toteutettu Rsa-avain on 768 bittiä pitkä.
 
 ## Lähteet
 
