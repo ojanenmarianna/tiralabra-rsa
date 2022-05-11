@@ -4,6 +4,11 @@
 
 ![plot](https://github.com/ojanenmarianna/tiralabra-rsa/blob/main/dokumentaatio/kuvat/kattavuusraportti.jpg)
 
+## Testauksen tulokset graafisessa muodossa
+
+![plot](https://github.com/ojanenmarianna/tiralabra-rsa/blob/main/dokumentaatio/kuvat/coverage_graph_rsa.jpg)
+![plot](https://github.com/ojanenmarianna/tiralabra-rsa/blob/main/dokumentaatio/kuvat/coverage_sunburst_rsa.jpg)
+
 ## Mitä on testattu, miten tämä tehtiin
 
 Projektissa testataan yksikkötesteillä RSA-avainten luonnin ja viestien salaamisen sekä purkamisen kannalta tärkeimpiä ominaisuuksia.
