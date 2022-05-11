@@ -24,7 +24,7 @@ Luokka on vastuussa rsa-avain -olion luomisesta.
 1. Luo avaimen annetulla moduluksella ja eksponentilla
 2. Palauttaa avaimen moduluksen ja eksponentin gettereillä
 
-#### Encrypt_and_decrypt_service
+#### Encryption_decryption_service
 
 Luokka on vastuussa viestin salaamisesta ja salatun viestin purkamisesta.
 
