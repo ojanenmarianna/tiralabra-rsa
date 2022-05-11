@@ -89,18 +89,10 @@ class UI:
 
     @staticmethod
     def show_keys_generated():
-        """
-        Ilmoittaa avainten luomisesta.
-        """
-
         messagebox.showinfo("RSA salaus", "Avainpari generoitu!")
 
     @staticmethod
     def show_key_entry_error():
-        """
-        Ilmoittaa virhesyötteestä.
-        """
-
         messagebox.showerror("Error", "Avainten pituus pitää olla luku väliltä 500-5000.")
 
     @staticmethod
@@ -113,25 +105,14 @@ class UI:
 
     @staticmethod
     def show_encrypt_error():
-        """
-        Ilmoittaa virhesyötteestä.
-        """
-
         messagebox.showerror("Error", "Viestin salaus epäonnistui.")
 
     @staticmethod
     def show_decrypt_error():
-        """
-        Ilmoittaa virhesyötteestä.
-        """
-
         messagebox.showerror("Error", "Viestin purku epäonnistui.")
 
 
     def generate(self):
-        """
-        Kutsuu tarvittavia metodeita avainparin luomiseksi.
-        """
         try:
             length = int(self.key_length_entry.get())
         except: # pylint: disable=bare-except
@@ -147,10 +128,6 @@ class UI:
         self.show_keys_generated()
 
     def encrypt(self):
-        """
-        Kutsuu tarvittavia metodeita viestin salaamiseksi ja ilmoittaa onnistumisesta käyttäjälle.
-        """
-
         if not self.keys_generated:
             self.show_key_error()
             return
@@ -165,10 +142,6 @@ class UI:
         self.decryptable_entry.insert(ttk.END, encrypted_message)
 
     def decrypt(self):
-        """
-        Kutsuu tarvittavia metodeita viestin purkamiseen ja ilmoittaa onnistumisesta käyttäjälle.
-        """
-
         encrypted_message = self.decryptable_entry.get("1.0", "end-1c")
         try:
             decrypted_message = EncryptAndDecrypt().decrypt(

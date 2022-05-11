@@ -8,13 +8,6 @@ class RsaService:
     """
 
     def __init__(self, length, prime_service, rsa_key):
-        """
-        Luokan konstruktori.
-
-        Args:
-            exponent_e = julkisen avaimen eksponentti, valittu suoraan yleisimmin käytetty arvo
-        """
-
         prime_service = prime_service(1500)
         self.primes_list = prime_service.prime_list
         self.rsa_key = rsa_key
@@ -49,13 +42,13 @@ class RsaService:
             prime_p = random.getrandbits(self.length//2)
             if prime_p % 2 == 0:
                 continue
-            if self.is_prime(prime_p):
+            if self.is_number_prime(prime_p):
                 break
         while True:
             prime_q = random.getrandbits(self.length//2)
             if prime_q % 2 == 0 or prime_q == prime_p:
                 continue
-            if self.is_prime(prime_q):
+            if self.is_number_prime(prime_q):
                 break
         return (prime_p, prime_q)
 
@@ -75,11 +68,7 @@ class RsaService:
 
         return num_a
 
-    def is_prime(self, possible_prime):
-        """
-        Tarkistaa onko luku alkuluku.
-        """
-
+    def is_number_prime(self, possible_prime):
         if not self.trial_division(possible_prime):
             return False
         if not self.miller_rabin(possible_prime):

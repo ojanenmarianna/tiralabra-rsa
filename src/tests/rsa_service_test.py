@@ -33,10 +33,10 @@ class TestRsaService(unittest.TestCase):
         #self.assertEqual(False, self.test_service.trial_division(self.not_prime))
 
     def test_is_prime(self):
-        self.assertEqual(True, self.test_service.is_prime(self.prime_q))
+        self.assertEqual(True, self.test_service.is_number_prime(self.prime_q))
 
     def test_is_prime_with_not_prime(self):
-        self.assertEqual(False, self.test_service.is_prime(self.not_prime))
+        self.assertEqual(False, self.test_service.is_number_prime(self.not_prime))
 
     def test_generate_keys_generates_keys(self):
         self.assertEqual(True, self.test_service.pub_key is not None)

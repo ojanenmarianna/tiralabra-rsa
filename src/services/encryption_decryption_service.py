@@ -15,7 +15,6 @@ class EncryptAndDecrypt:
         """
         Purkaa salatun viestin.
         """
-
         decrypted = pow(message, key.get_exponent(), key.get_modulus())
         message = decrypted.to_bytes(size, byteorder='big')
         in_text = message.decode()
