@@ -45,6 +45,8 @@ Luokka on vastuussa alkulukulistan luomisesta rsa-avaimen alkulukuehdokkaiden al
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
 
+- Ohjelma toimii vain alle 128 merkkiä pitkillä syötteillä. Yksi parannusehdotus olisikin siis toteuttaa toiminnallisuus niin, että syötteet voisivat olla pidempiä.
+- Pitkiä syötteitä varten voitaisiin myös toteuttaa jonkin näköinen randomoitu 'padding', jotta avainten 'toistuessa' pitkissä syötteissä, salauksen purkaminen olisi vaikeampaa eikä siis toisteisuudesta voisi päätellä mitään.
 
 ## Lähteet
 
