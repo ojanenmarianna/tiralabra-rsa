@@ -29,7 +29,7 @@ class UI:
             master=self._root, text="Luo avainpari", command=self.generate)
 
         encryptable_label = ttk.Label(
-            master=self._root, text="Salattava viesti (max pituus 127 merkkiä):", font="Arial 12")
+            master=self._root, text="Salattava viesti:", font="Arial 12")
         self.encryptable_entry = ttk.Text(self._root, width=32,
                                height=7, font=("Arial 11"))
 
