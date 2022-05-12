@@ -27,7 +27,7 @@ $ poetry install
 $ poetry run invoke start
 ```
 
-### Testien ajaminen
+## Testien ajaminen
 ```
 $ poetry run invoke test
 ```
