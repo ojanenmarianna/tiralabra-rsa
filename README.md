@@ -4,7 +4,7 @@
 
 Tässä repositoriossa on toteutettu Helsingin yliopiston Tietorakenteet ja algoritmit laboratoriotyö.
 
-## RSA-generaattori
+## Dokumentaatio
 
 [Käyttöohje](./dokumentaatio/kayttoohje.md)
 
