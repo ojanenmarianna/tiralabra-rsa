@@ -13,3 +13,31 @@ Tässä repositoriossa on toteutettu Helsingin yliopiston Tietorakenteet ja algo
 [Toteutusdokumentti](./dokumentaatio/toteutusdokumentti.md)
 
 [Testausdokumentti](./dokumentaatio/testausdokumentti.md)
+
+
+## Ohjelman alustaminen
+
+Asenna riippuvuudet
+```
+$ poetry install
+```
+
+## Ohjelman ajaminen
+```
+$ poetry run invoke start
+```
+
+### Testien ajaminen
+```
+$ poetry run invoke test
+```
+
+## Kattavuusraportin luominen
+```
+$ poetry run invoke report
+```
+
+## Pylintin ajaminen
+```
+$ poetry run invoke lint
+```
