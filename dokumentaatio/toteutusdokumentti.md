@@ -1,7 +1,5 @@
 # Toteutusdokumentti
 
-##### Fun Fact: Tällä hetkellä pisin toteutettu Rsa-avain on 768 bittiä pitkä.
-
 ## Ohjelman yleisrakenne
 
 ### Luokat
